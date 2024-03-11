@@ -48,7 +48,7 @@ class Department(University):
 
 
 def main():
-    pokharaUniversity = University("Pokhara University","Pokhara")
+    pokharaUniversity = University("Tribhuwan University","Balkhu, Kathmandu")
     pokharaUniversity.display_details
     comDep = Department("Computer Department","Madan Kadariya")
     comDep.add_courses(["Math","Physics","C"])

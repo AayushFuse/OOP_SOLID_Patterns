@@ -36,3 +36,25 @@ class ProcessBoth(PaymentProcessor,RefundProcessor):
 
 online = OnlinePaymentProcessor()
 online.process_payment(9000)
+
+
+"""
+from abc import ABC, abstractmethod
+
+class PaymentProcessor(ABC):
+    @abstractmethod
+    def process_payment(self, amount):
+        pass
+
+    @abstractmethod
+    def process_refund(self, amount):
+        pass
+
+class OnlinePaymentProcessor(PaymentProcessor):
+    def process_payment(self, amount):
+        print(f"Processing payment of ${amount}")
+
+    def process_refund(self, amount):
+        print(f"Processing refund of ${amount}")
+
+"""
