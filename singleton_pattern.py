@@ -20,7 +20,7 @@ class SingletonType(type):
 class ConfigurationManager(metaclass=SingletonType):
     
     def __init__(self) -> None:
-        with open('config.json','r') as f:
+        with open('config/config.json','r') as f:
             self.__config = json.load(f)
     
     def get_config(self):
