@@ -1,19 +1,21 @@
 """
 [Liskov Substitution Principle (LSP)] Download the python file from this link.
-In this file, there is an implementation of a banking system for account handling. 
-There is a savings account and a checking account class. 
-The checking account inherits the savings account as both have the same functionality and the checking account allows overdrafts 
-(allow processing transactions even if there is not sufficient balance). 
-Redesign this program to follow the  Liskov Substitution Principle (LSP) principle which represents that 
-“objects should be replaceable by their subtypes without altering how the program works”. 
+In this file, there is an implementation of a banking system for account handling.
+There is a savings account and a checking account class.
+The checking account inherits the savings account as both have the same functionality and the checking account allows overdrafts
+(allow processing transactions even if there is not sufficient balance).
+Redesign this program to follow the  Liskov Substitution Principle (LSP) principle which represents that
+“objects should be replaceable by their subtypes without altering how the program works”.
 """
 
-from abc import ABC,abstractmethod
+from abc import ABC, abstractmethod
+
 
 class Account(ABC):
     @abstractmethod
     def withdraw(self):
         pass
+
 
 class SavingsAccount(ABC):
     def __init__(self, balance) -> None:
@@ -28,6 +30,7 @@ class SavingsAccount(ABC):
         else:
             print("Insufficient funds!")
 
+
 class CheckingAccount(ABC):
     def __init__(self, balance, overdraft_limit):
         self.balance = balance
@@ -41,10 +44,12 @@ class CheckingAccount(ABC):
         else:
             print("Exceeds overdraft limit or insufficient funds!")
 
+
 def perform_bank_actions(account):
     account.withdraw(100)
     account.withdraw(200)
     account.withdraw(500)
+
 
 if __name__ == "__main__":
     # Creating instances of SavingsAccount and CheckingAccount

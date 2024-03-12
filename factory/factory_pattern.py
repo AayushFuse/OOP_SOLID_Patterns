@@ -16,7 +16,7 @@ class Logger(ABC):
 
 class FileLogger(Logger):
     def log(self, message):
-        with open("filelog.txt", "a",encoding='utf-8') as f:
+        with open("filelog.txt", "a", encoding="utf-8") as f:
             f.write(message + "\n")
 
 
@@ -39,7 +39,7 @@ class LoggerFactory:
             return ConsoleLogger()
         if l_type == "database":
             return DatabaseLogger()
-        
+
         raise ValueError("Enter valid logger type")
 
 
